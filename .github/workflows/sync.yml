@@ -16,12 +16,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Create downloads directory
+      - name: Clean and create downloads directory
         run: |
+          rm -rf public/downloads
           mkdir -p public/downloads/meta-rules-dat
           mkdir -p public/downloads/clash-rules
-          rm -rf public/downloads/meta-rules-dat/*
-          rm -rf public/downloads/clash-rules/*
+          mkdir -p public/downloads/direct-android-ruleset
 
       - name: Download MetaCubeX/meta-rules-dat assets
         env:
@@ -40,6 +40,13 @@ jobs:
           echo "Downloading release: $LATEST_TAG"
           gh release download "$LATEST_TAG" --repo Loyalsoldier/clash-rules --pattern "*.txt"
 
+      - name: Download mnixry/direct-android-ruleset files
+        run: |
+          cd public/downloads/direct-android-ruleset
+          # Download specific YAML files from rules branch
+          curl -L -o APP.mutated.yaml "https://github.com/mnixry/direct-android-ruleset/raw/refs/heads/rules/@Merged/APP.mutated.yaml"
+          curl -L -o GAME.mutated.yaml "https://github.com/mnixry/direct-android-ruleset/raw/refs/heads/rules/@Merged/GAME.mutated.yaml"
+
       - name: Generate files.json
         run: |
           echo "{" > public/files.json
@@ -49,21 +56,28 @@ jobs:
           # MetaCubeX/meta-rules-dat
           echo "    {" >> public/files.json
           echo "      \"name\": \"MetaCubeX/meta-rules-dat\"," >> public/files.json
-          echo "      \"description\": \"GeoIP / GeoSite 数据库\"," >> public/files.json
+          echo "      \"description\": \"GeoIP / GeoSite Database\"," >> public/files.json
           echo "      \"path\": \"meta-rules-dat\"," >> public/files.json
+          
+          # Calculate total size in bytes
+          cd public/downloads/meta-rules-dat
+          total_size=$(du -sb . | cut -f1)
+          cd ../../..
+          echo "      \"total_size\": $total_size," >> public/files.json
+          
           echo "      \"files\": [" >> public/files.json
           
           first=true
           cd public/downloads/meta-rules-dat
           for file in *; do
             if [ -f "$file" ]; then
-              size=$(du -h "$file" | cut -f1)
+              size=$(stat -f%z "$file" 2>/dev/null || stat -c%s "$file" 2>/dev/null)
               if [ "$first" = true ]; then
                 first=false
               else
                 echo "," >> ../../files.json
               fi
-              echo -n "        {\"name\": \"$file\", \"size\": \"$size\"}" >> ../../files.json
+              echo -n "        {\"name\": \"$file\", \"size\": $size}" >> ../../files.json
             fi
           done
           cd ../../..
@@ -75,21 +89,61 @@ jobs:
           # Loyalsoldier/clash-rules
           echo "    {" >> public/files.json
           echo "      \"name\": \"Loyalsoldier/clash-rules\"," >> public/files.json
-          echo "      \"description\": \"分流规则集（RULE-SET）\"," >> public/files.json
+          echo "      \"description\": \"Rule Sets (RULE-SET)\"," >> public/files.json
           echo "      \"path\": \"clash-rules\"," >> public/files.json
+          
+          # Calculate total size in bytes
+          cd public/downloads/clash-rules
+          total_size=$(du -sb . | cut -f1)
+          cd ../../..
+          echo "      \"total_size\": $total_size," >> public/files.json
+          
           echo "      \"files\": [" >> public/files.json
           
           first=true
           cd public/downloads/clash-rules
           for file in *; do
             if [ -f "$file" ]; then
-              size=$(du -h "$file" | cut -f1)
+              size=$(stat -f%z "$file" 2>/dev/null || stat -c%s "$file" 2>/dev/null)
               if [ "$first" = true ]; then
                 first=false
               else
                 echo "," >> ../../files.json
               fi
-              echo -n "        {\"name\": \"$file\", \"size\": \"$size\"}" >> ../../files.json
+              echo -n "        {\"name\": \"$file\", \"size\": $size}" >> ../../files.json
+            fi
+          done
+          cd ../../..
+          
+          echo "" >> public/files.json
+          echo "      ]" >> public/files.json
+          echo "    }," >> public/files.json
+          
+          # mnixry/direct-android-ruleset
+          echo "    {" >> public/files.json
+          echo "      \"name\": \"mnixry/direct-android-ruleset\"," >> public/files.json
+          echo "      \"description\": \"Android CN Apps & Games Direct Rule Sets\"," >> public/files.json
+          echo "      \"path\": \"direct-android-ruleset\"," >> public/files.json
+          
+          # Calculate total size in bytes
+          cd public/downloads/direct-android-ruleset
+          total_size=$(du -sb . | cut -f1)
+          cd ../../..
+          echo "      \"total_size\": $total_size," >> public/files.json
+          
+          echo "      \"files\": [" >> public/files.json
+          
+          first=true
+          cd public/downloads/direct-android-ruleset
+          for file in *; do
+            if [ -f "$file" ]; then
+              size=$(stat -f%z "$file" 2>/dev/null || stat -c%s "$file" 2>/dev/null)
+              if [ "$first" = true ]; then
+                first=false
+              else
+                echo "," >> ../../files.json
+              fi
+              echo -n "        {\"name\": \"$file\", \"size\": $size}" >> ../../files.json
             fi
           done
           cd ../../..
@@ -107,7 +161,7 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          git add public/downloads/meta-rules-dat public/downloads/clash-rules public/files.json
+          git add public/downloads/meta-rules-dat public/downloads/clash-rules public/downloads/direct-android-ruleset public/files.json
           git commit -m "Daily Sync - $(date -u +"%Y-%m-%d %H:%M:%S UTC")" || echo "No changes to commit"
           git push origin main
 
