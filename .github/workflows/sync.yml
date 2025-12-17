@@ -36,7 +36,7 @@ jobs:
         run: |
           cd public/downloads/clash-rules
           # 获取最新的 release tag
-          LATEST_TAG=$(gh release list --repo Loyalsoldier/clash-rules --limit 1 | awk '{print $1}')
+          LATEST_TAG=$(gh release list --repo Loyalsoldier/clash-rules --limit 1 | awk '{print $3}')
           echo "Downloading release: $LATEST_TAG"
           gh release download "$LATEST_TAG" --repo Loyalsoldier/clash-rules --pattern "*.txt"
 
