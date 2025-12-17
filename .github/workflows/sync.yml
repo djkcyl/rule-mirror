@@ -48,6 +48,8 @@ jobs:
           curl -L -o GAME.mutated.yaml "https://github.com/mnixry/direct-android-ruleset/raw/refs/heads/rules/@Merged/GAME.mutated.yaml"
 
       - name: Generate files.json
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           echo "{" > public/files.json
           echo "  \"updated_at\": \"$(date -u +"%Y-%m-%dT%H:%M:%SZ")\"," >> public/files.json
@@ -57,6 +59,11 @@ jobs:
           echo "    {" >> public/files.json
           echo "      \"name\": \"MetaCubeX/meta-rules-dat\"," >> public/files.json
           echo "      \"description\": \"GeoIP / GeoSite Database\"," >> public/files.json
+          
+          # Get license from GitHub API
+          license=$(gh api repos/MetaCubeX/meta-rules-dat --jq '.license.spdx_id // "Unknown"')
+          echo "      \"license\": \"$license\"," >> public/files.json
+          
           echo "      \"path\": \"meta-rules-dat\"," >> public/files.json
           
           # Calculate total size in bytes
@@ -90,6 +97,11 @@ jobs:
           echo "    {" >> public/files.json
           echo "      \"name\": \"Loyalsoldier/clash-rules\"," >> public/files.json
           echo "      \"description\": \"Rule Sets (RULE-SET)\"," >> public/files.json
+          
+          # Get license from GitHub API
+          license=$(gh api repos/Loyalsoldier/clash-rules --jq '.license.spdx_id // "Unknown"')
+          echo "      \"license\": \"$license\"," >> public/files.json
+          
           echo "      \"path\": \"clash-rules\"," >> public/files.json
           
           # Calculate total size in bytes
@@ -123,6 +135,11 @@ jobs:
           echo "    {" >> public/files.json
           echo "      \"name\": \"mnixry/direct-android-ruleset\"," >> public/files.json
           echo "      \"description\": \"Android CN Apps & Games Direct Rule Sets\"," >> public/files.json
+          
+          # Get license from GitHub API
+          license=$(gh api repos/mnixry/direct-android-ruleset --jq '.license.spdx_id // "Unknown"')
+          echo "      \"license\": \"$license\"," >> public/files.json
+          
           echo "      \"path\": \"direct-android-ruleset\"," >> public/files.json
           
           # Calculate total size in bytes

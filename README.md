@@ -93,7 +93,7 @@ Go to the "Actions" tab in your repository and run the "Sync Rule Files" workflo
 
 ## License
 
-MIT
+GPL-3.0 - See [LICENSE](LICENSE) file for details
 
 ## Credits
 

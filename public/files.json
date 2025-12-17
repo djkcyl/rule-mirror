@@ -4,6 +4,7 @@
     {
       "name": "MetaCubeX/meta-rules-dat",
       "description": "GeoIP / GeoSite Database",
+      "license": "GPL-3.0",
       "path": "meta-rules-dat",
       "total_size": 74448896,
       "files": [
@@ -38,6 +39,7 @@
     {
       "name": "Loyalsoldier/clash-rules",
       "description": "Rule Sets (RULE-SET)",
+      "license": "GPL-3.0",
       "path": "clash-rules",
       "total_size": 7546880,
       "files": [
@@ -60,6 +62,7 @@
     {
       "name": "mnixry/direct-android-ruleset",
       "description": "Android CN Apps & Games Direct Rule Sets",
+      "license": "MIT",
       "path": "direct-android-ruleset",
       "total_size": 524288,
       "files": [
