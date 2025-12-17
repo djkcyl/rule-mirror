@@ -1,17 +1,59 @@
 {
-  "updated_at": "2024-01-01T00:00:00Z",
+  "updated_at": "2025-12-17T07:46:11Z",
   "projects": [
     {
       "name": "MetaCubeX/meta-rules-dat",
       "description": "GeoIP / GeoSite 数据库",
       "path": "meta-rules-dat",
-      "files": []
+      "files": [
+        {"name": "GeoLite2-ASN.mmdb", "size": "11M"},
+        {"name": "GeoLite2-ASN.mmdb.sha256sum", "size": "4.0K"},
+        {"name": "country-lite.mmdb", "size": "376K"},
+        {"name": "country-lite.mmdb.sha256sum", "size": "4.0K"},
+        {"name": "country.mmdb", "size": "9.9M"},
+        {"name": "country.mmdb.sha256sum", "size": "4.0K"},
+        {"name": "geoip-lite.dat", "size": "200K"},
+        {"name": "geoip-lite.dat.sha256sum", "size": "4.0K"},
+        {"name": "geoip-lite.db", "size": "372K"},
+        {"name": "geoip-lite.db.sha256sum", "size": "4.0K"},
+        {"name": "geoip-lite.metadb", "size": "376K"},
+        {"name": "geoip-lite.metadb.sha256sum", "size": "4.0K"},
+        {"name": "geoip.dat", "size": "20M"},
+        {"name": "geoip.dat.sha256sum", "size": "4.0K"},
+        {"name": "geoip.db", "size": "9.2M"},
+        {"name": "geoip.db.sha256sum", "size": "4.0K"},
+        {"name": "geoip.metadb", "size": "9.3M"},
+        {"name": "geoip.metadb.sha256sum", "size": "4.0K"},
+        {"name": "geosite-lite.dat", "size": "176K"},
+        {"name": "geosite-lite.dat.sha256sum", "size": "4.0K"},
+        {"name": "geosite-lite.db", "size": "280K"},
+        {"name": "geosite-lite.db.sha256sum", "size": "4.0K"},
+        {"name": "geosite.dat", "size": "4.0M"},
+        {"name": "geosite.dat.sha256sum", "size": "4.0K"},
+        {"name": "geosite.db", "size": "6.4M"},
+        {"name": "geosite.db.sha256sum", "size": "4.0K"}
+      ]
     },
     {
       "name": "Loyalsoldier/clash-rules",
       "description": "分流规则集（RULE-SET）",
       "path": "clash-rules",
-      "files": []
+      "files": [
+        {"name": "apple.txt", "size": "8.0K"},
+        {"name": "applications.txt", "size": "4.0K"},
+        {"name": "cncidr.txt", "size": "464K"},
+        {"name": "direct.txt", "size": "2.4M"},
+        {"name": "gfw.txt", "size": "128K"},
+        {"name": "google.txt", "size": "8.0K"},
+        {"name": "greatfire.txt", "size": "4.0K"},
+        {"name": "icloud.txt", "size": "4.0K"},
+        {"name": "lancidr.txt", "size": "4.0K"},
+        {"name": "private.txt", "size": "4.0K"},
+        {"name": "proxy.txt", "size": "592K"},
+        {"name": "reject.txt", "size": "3.4M"},
+        {"name": "telegramcidr.txt", "size": "4.0K"},
+        {"name": "tld-not-cn.txt", "size": "12K"}
+      ]
     }
   ]
 }
