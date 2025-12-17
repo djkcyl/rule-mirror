@@ -15,16 +15,23 @@
         <p>{{ error }}</p>
       </div>
 
-      <div v-else class="file-list-container">
-        <div class="info-bar">
-          <span class="file-count">{{ files.length }} files available</span>
+      <div v-else>
+        <div class="info-bar-global">
           <span class="update-time" v-if="updatedAt">
             Last updated: {{ formatDate(updatedAt) }}
           </span>
         </div>
 
-        <div class="file-list">
-          <div v-for="file in files" :key="file.name" class="file-item-wrapper">
+        <div v-for="project in projects" :key="project.name" class="project-section">
+          <div class="project-header">
+            <h2 class="project-name">{{ project.name }}</h2>
+            <p class="project-description">{{ project.description }}</p>
+            <span class="project-file-count">{{ project.files.length }} 个文件</span>
+          </div>
+
+          <div class="file-list-container">
+            <div class="file-list">
+              <div v-for="file in project.files" :key="file.name" class="file-item-wrapper">
             <div class="file-item">
               <div class="file-info">
                 <span class="file-icon">📄</span>
@@ -36,7 +43,7 @@
                       <button 
                         v-for="checksum in file.checksums" 
                         :key="checksum.name"
-                        @click="toggleChecksum(file.name); loadChecksumContent(checksum.name)"
+                        @click="toggleChecksum(file.name); loadChecksumContent(checksum.name, project.path)"
                         class="checksum-badge"
                         :class="{ expanded: isExpanded(file.name) }"
                         :title="`点击查看 ${checksum.name}`"
@@ -45,14 +52,14 @@
                       </button>
                     </span>
                   </div>
-                  <span class="file-url">{{ getFileUrl(file.name) }}</span>
+                  <span class="file-url">{{ getFileUrl(file.name, project.path) }}</span>
                 </div>
               </div>
               <div class="file-actions">
-                <button @click="copyLink(file.name)" class="copy-button" :class="{ copied: copiedFile === file.name }">
+                <button @click="copyLink(file.name, project.path)" class="copy-button" :class="{ copied: copiedFile === file.name }">
                   {{ copiedFile === file.name ? '已复制' : '复制链接' }}
                 </button>
-                <a :href="`/downloads/${file.name}`" class="download-button" download>
+                <a :href="`/downloads/${project.path}/${file.name}`" class="download-button" download>
                   下载
                 </a>
               </div>
@@ -74,13 +81,15 @@
                     {{ copiedFile === `checksum-${checksum.name}` ? '✓ 已复制' : '复制原文' }}
                   </button>
                   <button 
-                    @click="copyLink(checksum.name)" 
+                    @click="copyLink(checksum.name, project.path)" 
                     class="checksum-action-button"
                     :class="{ copied: copiedFile === checksum.name }"
                   >
                     {{ copiedFile === checksum.name ? '✓ 已复制' : '复制链接' }}
                   </button>
                 </div>
+              </div>
+            </div>
               </div>
             </div>
           </div>
@@ -100,7 +109,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 
-const files = ref([])
+const projects = ref([])
 const updatedAt = ref('')
 const loading = ref(true)
 const error = ref(null)
@@ -157,7 +166,13 @@ const fetchFiles = async () => {
     }
     
     const data = await response.json()
-    files.value = processFiles(data.files || [])
+    
+    // 处理每个项目的文件列表
+    projects.value = data.projects.map(project => ({
+      ...project,
+      files: processFiles(project.files || [])
+    }))
+    
     updatedAt.value = data.updated_at || ''
   } catch (err) {
     error.value = err.message || 'Failed to load files'
@@ -167,9 +182,10 @@ const fetchFiles = async () => {
   }
 }
 
-const getFileUrl = (filename) => {
+const getFileUrl = (filename, projectPath = '') => {
   const baseUrl = window.location.origin
-  return `${baseUrl}/downloads/${filename}`
+  const path = projectPath ? `${projectPath}/` : ''
+  return `${baseUrl}/downloads/${path}${filename}`
 }
 
 const getChecksumType = (filename) => {
@@ -192,11 +208,12 @@ const isExpanded = (filename) => {
   return expandedFiles.value.has(filename)
 }
 
-const loadChecksumContent = async (filename) => {
+const loadChecksumContent = async (filename, projectPath = '') => {
   if (checksumContents.value[filename]) return
   
   try {
-    const response = await fetch(`/downloads/${filename}`)
+    const path = projectPath ? `${projectPath}/` : ''
+    const response = await fetch(`/downloads/${path}${filename}`)
     if (response.ok) {
       const content = await response.text()
       // 提取纯 hash 值（去掉文件名部分）
@@ -235,9 +252,9 @@ const copyChecksumContent = async (filename) => {
   }
 }
 
-const copyLink = async (filename) => {
+const copyLink = async (filename, projectPath = '') => {
   try {
-    const url = getFileUrl(filename)
+    const url = getFileUrl(filename, projectPath)
     await navigator.clipboard.writeText(url)
     copiedFile.value = filename
     setTimeout(() => {
@@ -334,8 +351,6 @@ onMounted(() => {
 
 .file-list-container {
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 
@@ -345,32 +360,87 @@ onMounted(() => {
   }
 }
 
-.info-bar {
+.info-bar-global {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding: 1.5rem 2rem;
   background: #f8f9fa;
   border-bottom: 1px solid #e9ecef;
-  flex-wrap: wrap;
-  gap: 1rem;
 }
 
 @media (prefers-color-scheme: dark) {
-  .info-bar {
+  .info-bar-global {
     background: #333;
     border-bottom-color: #444;
   }
 }
 
-.file-count {
-  font-weight: 600;
-  color: #2563eb;
-}
-
 .update-time {
   color: #6c757d;
   font-size: 0.9rem;
+}
+
+.project-section {
+  margin-bottom: 2rem;
+}
+
+.project-section:last-child {
+  margin-bottom: 0;
+}
+
+.project-header {
+  padding: 2rem 2rem 1rem 2rem;
+  background: linear-gradient(to right, #f8f9fa, #ffffff);
+  border-bottom: 2px solid #2563eb;
+}
+
+@media (prefers-color-scheme: dark) {
+  .project-header {
+    background: linear-gradient(to right, #1f2937, #2a2a2a);
+  }
+}
+
+.project-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 0.5rem 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .project-name {
+    color: #f3f4f6;
+  }
+}
+
+.project-description {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin: 0 0 0.75rem 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .project-description {
+    color: #9ca3af;
+  }
+}
+
+.project-file-count {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2563eb;
+  background: #eff6ff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .project-file-count {
+    background: #1e3a8a;
+    color: #93c5fd;
+  }
 }
 
 .file-list {
