@@ -22,6 +22,7 @@ jobs:
           mkdir -p public/downloads/meta-rules-dat
           mkdir -p public/downloads/clash-rules
           mkdir -p public/downloads/direct-android-ruleset
+          mkdir -p public/downloads/metacubexd
 
       - name: Download MetaCubeX/meta-rules-dat assets
         env:
@@ -46,6 +47,12 @@ jobs:
           # Download specific YAML files from rules branch
           curl -L -o APP.mutated.yaml "https://github.com/mnixry/direct-android-ruleset/raw/refs/heads/rules/@Merged/APP.mutated.yaml"
           curl -L -o GAME.mutated.yaml "https://github.com/mnixry/direct-android-ruleset/raw/refs/heads/rules/@Merged/GAME.mutated.yaml"
+
+      - name: Download MetaCubeX/metacubexd gh-pages
+        run: |
+          cd public/downloads/metacubexd
+          # Download gh-pages branch as ZIP
+          curl -L -o metacubexd-gh-pages.zip "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
 
       - name: Generate files.json
         env:
@@ -167,6 +174,44 @@ jobs:
           
           echo "" >> public/files.json
           echo "      ]" >> public/files.json
+          echo "    }," >> public/files.json
+          
+          # MetaCubeX/metacubexd
+          echo "    {" >> public/files.json
+          echo "      \"name\": \"MetaCubeX/metacubexd\"," >> public/files.json
+          echo "      \"description\": \"Clash Meta Dashboard (Web UI)\"," >> public/files.json
+          
+          # Get license from GitHub API
+          license=$(gh api repos/MetaCubeX/metacubexd --jq '.license.spdx_id // "Unknown"')
+          echo "      \"license\": \"$license\"," >> public/files.json
+          
+          echo "      \"path\": \"metacubexd\"," >> public/files.json
+          
+          # Calculate total size in bytes
+          cd public/downloads/metacubexd
+          total_size=$(du -sb . | cut -f1)
+          cd ../../..
+          echo "      \"total_size\": $total_size," >> public/files.json
+          
+          echo "      \"files\": [" >> public/files.json
+          
+          first=true
+          cd public/downloads/metacubexd
+          for file in *; do
+            if [ -f "$file" ]; then
+              size=$(stat -f%z "$file" 2>/dev/null || stat -c%s "$file" 2>/dev/null)
+              if [ "$first" = true ]; then
+                first=false
+              else
+                echo "," >> ../../files.json
+              fi
+              echo -n "        {\"name\": \"$file\", \"size\": $size}" >> ../../files.json
+            fi
+          done
+          cd ../../..
+          
+          echo "" >> public/files.json
+          echo "      ]" >> public/files.json
           echo "    }" >> public/files.json
           echo "  ]" >> public/files.json
           echo "}" >> public/files.json
@@ -178,7 +223,7 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          git add public/downloads/meta-rules-dat public/downloads/clash-rules public/downloads/direct-android-ruleset public/files.json
+          git add public/downloads/meta-rules-dat public/downloads/clash-rules public/downloads/direct-android-ruleset public/downloads/metacubexd public/files.json
           git commit -m "Daily Sync - $(date -u +"%Y-%m-%d %H:%M:%S UTC")" || echo "No changes to commit"
           git push origin main
 

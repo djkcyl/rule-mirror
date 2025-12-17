@@ -244,6 +244,8 @@
             <a href="https://github.com/Loyalsoldier/clash-rules" class="text-blue-600 dark:text-blue-400 hover:underline hover:text-blue-700 dark:hover:text-blue-300 transition-colors" target="_blank" rel="noopener">Loyalsoldier/clash-rules</a>
             <span class="mx-2">·</span>
             <a href="https://github.com/mnixry/direct-android-ruleset" class="text-blue-600 dark:text-blue-400 hover:underline hover:text-blue-700 dark:hover:text-blue-300 transition-colors" target="_blank" rel="noopener">mnixry/direct-android-ruleset</a>
+            <span class="mx-2">·</span>
+            <a href="https://github.com/MetaCubeX/metacubexd" class="text-blue-600 dark:text-blue-400 hover:underline hover:text-blue-700 dark:hover:text-blue-300 transition-colors" target="_blank" rel="noopener">MetaCubeX/metacubexd</a>
           </p>
           <p class="text-sm text-gray-600 dark:text-gray-300">
             This Project: 
