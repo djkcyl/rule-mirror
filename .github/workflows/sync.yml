@@ -46,6 +46,15 @@ jobs:
           echo "Using repository: $REPO"
           cd public/downloads/meta-rules-dat
           gh release download latest --repo "$REPO" --pattern "*"
+          
+          # Generate SHA256 checksums for all files (overwrite if exists)
+          for file in *; do
+            if [ -f "$file" ] && [[ "$file" != *.sha256sum ]]; then
+              echo "Generating checksum for $file"
+              sha256sum "$file" > "${file}.sha256sum"
+            fi
+          done
+          
           echo "REPO_NAME=$REPO" >> $GITHUB_ENV
 
       - name: Download Loyalsoldier/clash-rules assets
@@ -57,6 +66,14 @@ jobs:
           LATEST_TAG=$(gh release list --repo Loyalsoldier/clash-rules --limit 1 | awk '{print $3}')
           echo "Downloading release: $LATEST_TAG"
           gh release download "$LATEST_TAG" --repo Loyalsoldier/clash-rules --pattern "*.txt"
+          
+          # Generate SHA256 checksums for all downloaded files
+          for file in *.txt; do
+            if [ -f "$file" ]; then
+              echo "Generating checksum for $file"
+              sha256sum "$file" > "${file}.sha256sum"
+            fi
+          done
 
       - name: Download mnixry/direct-android-ruleset files
         run: |
@@ -64,12 +81,24 @@ jobs:
           # Download specific YAML files from rules branch
           curl -L -o APP.mutated.yaml "https://github.com/mnixry/direct-android-ruleset/raw/refs/heads/rules/@Merged/APP.mutated.yaml"
           curl -L -o GAME.mutated.yaml "https://github.com/mnixry/direct-android-ruleset/raw/refs/heads/rules/@Merged/GAME.mutated.yaml"
+          
+          # Generate SHA256 checksums for all downloaded files
+          for file in *.yaml; do
+            if [ -f "$file" ]; then
+              echo "Generating checksum for $file"
+              sha256sum "$file" > "${file}.sha256sum"
+            fi
+          done
 
       - name: Download MetaCubeX/metacubexd gh-pages
         run: |
           cd public/downloads/metacubexd
           # Download gh-pages branch as ZIP
           curl -L -o metacubexd-gh-pages.zip "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
+          
+          # Generate SHA256 checksum for the downloaded file
+          echo "Generating checksum for metacubexd-gh-pages.zip"
+          sha256sum metacubexd-gh-pages.zip > metacubexd-gh-pages.zip.sha256sum
 
       - name: Generate files.json
         env:
