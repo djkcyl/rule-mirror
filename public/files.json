@@ -1,8 +1,8 @@
 {
-  "updated_at": "2025-12-18T00:09:10Z",
+  "updated_at": "2025-12-18T01:50:21Z",
   "projects": [
     {
-      "name": "MetaCubeX/meta-rules-dat",
+      "name": "djkcyl/meta-rules-dat",
       "description": "GeoIP / GeoSite Database",
       "license": "GPL-3.0",
       "path": "meta-rules-dat",
@@ -64,10 +64,10 @@
       "description": "Android CN Apps & Games Direct Rule Sets",
       "license": "AGPL-3.0",
       "path": "direct-android-ruleset",
-      "total_size": 216664,
+      "total_size": 216182,
       "files": [
-        {"name": "APP.mutated.yaml", "size": 91633},
-        {"name": "GAME.mutated.yaml", "size": 125031}
+        {"name": "APP.mutated.yaml", "size": 91096},
+        {"name": "GAME.mutated.yaml", "size": 125086}
       ]
     },
     {
