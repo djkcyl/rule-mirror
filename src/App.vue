@@ -131,23 +131,23 @@
                           <span class="inline-flex items-center text-xs font-medium text-gray-600 dark:text-gray-200 bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded">
                             {{ formatSize(file.size) }}
                           </span>
-                        </div>
-                        <div v-if="file.checksums && file.checksums.length > 0" class="flex gap-2 flex-wrap">
-                          <button 
-                            v-for="checksum in file.checksums" 
-                            :key="checksum.name"
-                            @click="toggleChecksum(file.name); loadChecksumContent(checksum.name, project.path)"
-                            :class="['inline-flex items-center gap-1 text-xs font-medium px-2.5 py-1 rounded-lg border transition-all duration-200',
-                                     isExpanded(file.name) ? 'bg-blue-600 text-white border-blue-600 shadow-md' : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border-gray-300 dark:border-gray-600 hover:border-blue-500 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-gray-700']"
-                            :title="`Click to view ${checksum.name}`">
-                            <svg v-if="!isExpanded(file.name)" class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
-                            </svg>
-                            <svg v-else class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"/>
-                            </svg>
-                            {{ getChecksumType(checksum.name) }}
-                          </button>
+                          <div v-if="file.checksums && file.checksums.length > 0" class="flex gap-2 flex-wrap">
+                            <button 
+                              v-for="checksum in file.checksums" 
+                              :key="checksum.name"
+                              @click="toggleChecksum(file.name); loadChecksumContent(checksum.name, project.path)"
+                              :class="['inline-flex items-center gap-1 text-xs font-medium px-2.5 py-0.5 rounded-lg border transition-all duration-200',
+                                       isExpanded(file.name) ? 'bg-blue-600 text-white border-blue-600 shadow-md' : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border-gray-300 dark:border-gray-600 hover:border-blue-500 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-gray-700']"
+                              :title="`Click to view ${checksum.name}`">
+                              <svg v-if="!isExpanded(file.name)" class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                              </svg>
+                              <svg v-else class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"/>
+                              </svg>
+                              {{ getChecksumType(checksum.name) }}
+                            </button>
+                          </div>
                         </div>
                         <code class="text-xs text-gray-500 dark:text-gray-400 font-mono break-all bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">{{ getFileUrl(file.name, project.path) }}</code>
                       </div>
