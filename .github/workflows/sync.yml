@@ -5,6 +5,15 @@ on:
     # Run daily at 8 AM Beijing Time (0 AM UTC)
     - cron: '0 0 * * *'
   workflow_dispatch:
+    inputs:
+      meta_rules_repo:
+        description: 'Meta rules dat repository'
+        required: false
+        default: 'djkcyl/meta-rules-dat'
+        type: choice
+        options:
+          - 'MetaCubeX/meta-rules-dat'
+          - 'djkcyl/meta-rules-dat'
 
 jobs:
   sync:
@@ -28,8 +37,16 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          # Determine which repo to use
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            REPO="MetaCubeX/meta-rules-dat"
+          else
+            REPO="${{ github.event.inputs.meta_rules_repo || 'djkcyl/meta-rules-dat' }}"
+          fi
+          echo "Using repository: $REPO"
           cd public/downloads/meta-rules-dat
-          gh release download latest --repo djkcyl/meta-rules-dat --pattern "*"
+          gh release download latest --repo "$REPO" --pattern "*"
+          echo "REPO_NAME=$REPO" >> $GITHUB_ENV
 
       - name: Download Loyalsoldier/clash-rules assets
         env:
@@ -58,17 +75,24 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          # Determine which repo was used
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            REPO_NAME="MetaCubeX/meta-rules-dat"
+          else
+            REPO_NAME="${{ github.event.inputs.meta_rules_repo || 'djkcyl/meta-rules-dat' }}"
+          fi
+          
           echo "{" > public/files.json
           echo "  \"updated_at\": \"$(date -u +"%Y-%m-%dT%H:%M:%SZ")\"," >> public/files.json
           echo "  \"projects\": [" >> public/files.json
           
-          # MetaCubeX/meta-rules-dat
+          # MetaCubeX/meta-rules-dat (or djkcyl/meta-rules-dat)
           echo "    {" >> public/files.json
-          echo "      \"name\": \"MetaCubeX/meta-rules-dat\"," >> public/files.json
+          echo "      \"name\": \"$REPO_NAME\"," >> public/files.json
           echo "      \"description\": \"GeoIP / GeoSite Database\"," >> public/files.json
           
           # Get license from GitHub API
-          license=$(gh api repos/MetaCubeX/meta-rules-dat --jq '.license.spdx_id // "Unknown"')
+          license=$(gh api repos/$REPO_NAME --jq '.license.spdx_id // "Unknown"')
           echo "      \"license\": \"$license\"," >> public/files.json
           
           echo "      \"path\": \"meta-rules-dat\"," >> public/files.json
