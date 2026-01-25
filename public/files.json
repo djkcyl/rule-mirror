@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-01-24T00:10:53Z",
+  "updated_at": "2026-01-25T00:12:17Z",
   "projects": [
     {
       "name": "MetaCubeX/meta-rules-dat",
@@ -41,7 +41,7 @@
       "description": "Rule Sets (RULE-SET)",
       "license": "GPL-3.0",
       "path": "clash-rules",
-      "total_size": 7408651,
+      "total_size": 7443809,
       "files": [
         {"name": "apple.txt", "size": 5488},
         {"name": "apple.txt.sha256sum", "size": 76},
@@ -65,7 +65,7 @@
         {"name": "private.txt.sha256sum", "size": 78},
         {"name": "proxy.txt", "size": 602748},
         {"name": "proxy.txt.sha256sum", "size": 76},
-        {"name": "reject.txt", "size": 4099663},
+        {"name": "reject.txt", "size": 4134821},
         {"name": "reject.txt.sha256sum", "size": 77},
         {"name": "telegramcidr.txt", "size": 274},
         {"name": "telegramcidr.txt.sha256sum", "size": 83},
@@ -78,11 +78,11 @@
       "description": "Android CN Apps & Games Direct Rule Sets",
       "license": "AGPL-3.0",
       "path": "direct-android-ruleset",
-      "total_size": 215995,
+      "total_size": 216278,
       "files": [
-        {"name": "APP.mutated.yaml", "size": 90636},
+        {"name": "APP.mutated.yaml", "size": 91063},
         {"name": "APP.mutated.yaml.sha256sum", "size": 83},
-        {"name": "GAME.mutated.yaml", "size": 125192},
+        {"name": "GAME.mutated.yaml", "size": 125048},
         {"name": "GAME.mutated.yaml.sha256sum", "size": 84}
       ]
     },
