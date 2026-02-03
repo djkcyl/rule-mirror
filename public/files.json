@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-02-02T00:13:50Z",
+  "updated_at": "2026-02-03T00:14:42Z",
   "projects": [
     {
       "name": "MetaCubeX/meta-rules-dat",
@@ -78,11 +78,11 @@
       "description": "Android CN Apps & Games Direct Rule Sets",
       "license": "AGPL-3.0",
       "path": "direct-android-ruleset",
-      "total_size": 216575,
+      "total_size": 215723,
       "files": [
-        {"name": "APP.mutated.yaml", "size": 91142},
+        {"name": "APP.mutated.yaml", "size": 90299},
         {"name": "APP.mutated.yaml.sha256sum", "size": 83},
-        {"name": "GAME.mutated.yaml", "size": 125266},
+        {"name": "GAME.mutated.yaml", "size": 125257},
         {"name": "GAME.mutated.yaml.sha256sum", "size": 84}
       ]
     },
@@ -91,9 +91,9 @@
       "description": "Clash Meta Dashboard (Web UI)",
       "license": "MIT",
       "path": "metacubexd",
-      "total_size": 2133429,
+      "total_size": 2142593,
       "files": [
-        {"name": "metacubexd-gh-pages.zip", "size": 2133339},
+        {"name": "metacubexd-gh-pages.zip", "size": 2142503},
         {"name": "metacubexd-gh-pages.zip.sha256sum", "size": 90}
       ]
     }
