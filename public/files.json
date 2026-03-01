@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-02-28T00:11:45Z",
+  "updated_at": "2026-03-01T00:14:25Z",
   "projects": [
     {
       "name": "MetaCubeX/meta-rules-dat",
@@ -41,7 +41,7 @@
       "description": "Rule Sets (RULE-SET)",
       "license": "GPL-3.0",
       "path": "clash-rules",
-      "total_size": 7946415,
+      "total_size": 7951115,
       "files": [
         {"name": "apple.txt", "size": 5488},
         {"name": "apple.txt.sha256sum", "size": 76},
@@ -49,7 +49,7 @@
         {"name": "applications.txt.sha256sum", "size": 83},
         {"name": "cncidr.txt", "size": 201094},
         {"name": "cncidr.txt.sha256sum", "size": 77},
-        {"name": "direct.txt", "size": 2423300},
+        {"name": "direct.txt", "size": 2421300},
         {"name": "direct.txt.sha256sum", "size": 77},
         {"name": "gfw.txt", "size": 89937},
         {"name": "gfw.txt.sha256sum", "size": 74},
@@ -65,7 +65,7 @@
         {"name": "private.txt.sha256sum", "size": 78},
         {"name": "proxy.txt", "size": 574587},
         {"name": "proxy.txt.sha256sum", "size": 76},
-        {"name": "reject.txt", "size": 4626440},
+        {"name": "reject.txt", "size": 4633140},
         {"name": "reject.txt.sha256sum", "size": 77},
         {"name": "telegramcidr.txt", "size": 274},
         {"name": "telegramcidr.txt.sha256sum", "size": 83},
@@ -78,11 +78,11 @@
       "description": "Android CN Apps & Games Direct Rule Sets",
       "license": "AGPL-3.0",
       "path": "direct-android-ruleset",
-      "total_size": 215605,
+      "total_size": 215634,
       "files": [
         {"name": "APP.mutated.yaml", "size": 90301},
         {"name": "APP.mutated.yaml.sha256sum", "size": 83},
-        {"name": "GAME.mutated.yaml", "size": 125137},
+        {"name": "GAME.mutated.yaml", "size": 125166},
         {"name": "GAME.mutated.yaml.sha256sum", "size": 84}
       ]
     },
