@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-04-17T00:21:58Z",
+  "updated_at": "2026-04-18T00:19:07Z",
   "projects": [
     {
       "name": "MetaCubeX/meta-rules-dat",
       "description": "GeoIP / GeoSite Database",
       "license": "GPL-3.0",
       "path": "meta-rules-dat",
-      "total_size": 69993060,
+      "total_size": 69993170,
       "files": [
         {"name": "GeoLite2-ASN.mmdb", "size": 11811542},
         {"name": "GeoLite2-ASN.mmdb.sha256sum", "size": 84},
@@ -30,9 +30,9 @@
         {"name": "geosite-lite.dat.sha256sum", "size": 83},
         {"name": "geosite-lite.db", "size": 284151},
         {"name": "geosite-lite.db.sha256sum", "size": 82},
-        {"name": "geosite.dat", "size": 4200778},
+        {"name": "geosite.dat", "size": 4200789},
         {"name": "geosite.dat.sha256sum", "size": 78},
-        {"name": "geosite.db", "size": 6765618},
+        {"name": "geosite.db", "size": 6765717},
         {"name": "geosite.db.sha256sum", "size": 77}
       ]
     },
@@ -41,7 +41,7 @@
       "description": "Rule Sets (RULE-SET)",
       "license": "GPL-3.0",
       "path": "clash-rules",
-      "total_size": 8341995,
+      "total_size": 8251329,
       "files": [
         {"name": "apple.txt", "size": 5488},
         {"name": "apple.txt.sha256sum", "size": 76},
@@ -65,7 +65,7 @@
         {"name": "private.txt.sha256sum", "size": 78},
         {"name": "proxy.txt", "size": 592667},
         {"name": "proxy.txt.sha256sum", "size": 76},
-        {"name": "reject.txt", "size": 4986894},
+        {"name": "reject.txt", "size": 4896228},
         {"name": "reject.txt.sha256sum", "size": 77},
         {"name": "telegramcidr.txt", "size": 274},
         {"name": "telegramcidr.txt.sha256sum", "size": 83},
@@ -78,11 +78,11 @@
       "description": "Android CN Apps & Games Direct Rule Sets",
       "license": "AGPL-3.0",
       "path": "direct-android-ruleset",
-      "total_size": 213328,
+      "total_size": 212416,
       "files": [
-        {"name": "APP.mutated.yaml", "size": 88768},
+        {"name": "APP.mutated.yaml", "size": 87781},
         {"name": "APP.mutated.yaml.sha256sum", "size": 83},
-        {"name": "GAME.mutated.yaml", "size": 124393},
+        {"name": "GAME.mutated.yaml", "size": 124468},
         {"name": "GAME.mutated.yaml.sha256sum", "size": 84}
       ]
     },
