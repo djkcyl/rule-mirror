@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-16T01:50:28Z",
+  "updated_at": "2026-07-17T01:53:55Z",
   "projects": [
     {
       "name": "MetaCubeX/meta-rules-dat",
@@ -43,15 +43,15 @@
       "description": "Rule Sets (RULE-SET)",
       "license": "GPL-3.0",
       "path": "clash-rules",
-      "total_size": 7941355,
+      "total_size": 7951174,
       "files": [
         {"name": "apple.txt", "size": 5387},
         {"name": "apple.txt.sha256sum", "size": 76},
         {"name": "applications.txt", "size": 2821},
         {"name": "applications.txt.sha256sum", "size": 83},
-        {"name": "cncidr.txt", "size": 129635},
+        {"name": "cncidr.txt", "size": 129471},
         {"name": "cncidr.txt.sha256sum", "size": 77},
-        {"name": "direct.txt", "size": 2319689},
+        {"name": "direct.txt", "size": 2319902},
         {"name": "direct.txt.sha256sum", "size": 77},
         {"name": "gfw.txt", "size": 93644},
         {"name": "gfw.txt.sha256sum", "size": 74},
@@ -65,9 +65,9 @@
         {"name": "lancidr.txt.sha256sum", "size": 78},
         {"name": "private.txt", "size": 3478},
         {"name": "private.txt.sha256sum", "size": 78},
-        {"name": "proxy.txt", "size": 613058},
+        {"name": "proxy.txt", "size": 613077},
         {"name": "proxy.txt.sha256sum", "size": 76},
-        {"name": "reject.txt", "size": 4755355},
+        {"name": "reject.txt", "size": 4765106},
         {"name": "reject.txt.sha256sum", "size": 77},
         {"name": "telegramcidr.txt", "size": 274},
         {"name": "telegramcidr.txt.sha256sum", "size": 83},
@@ -80,11 +80,11 @@
       "description": "Android CN Apps & Games Direct Rule Sets",
       "license": "AGPL-3.0",
       "path": "direct-android-ruleset",
-      "total_size": 214174,
+      "total_size": 215114,
       "files": [
-        {"name": "APP.mutated.yaml", "size": 90111},
+        {"name": "APP.mutated.yaml", "size": 91063},
         {"name": "APP.mutated.yaml.sha256sum", "size": 83},
-        {"name": "GAME.mutated.yaml", "size": 123896},
+        {"name": "GAME.mutated.yaml", "size": 123884},
         {"name": "GAME.mutated.yaml.sha256sum", "size": 84}
       ]
     },
@@ -93,9 +93,9 @@
       "description": "Clash Meta Dashboard (Web UI)",
       "license": "MIT",
       "path": "metacubexd",
-      "total_size": 2471969,
+      "total_size": 2523962,
       "files": [
-        {"name": "metacubexd-gh-pages.zip", "size": 2471879},
+        {"name": "metacubexd-gh-pages.zip", "size": 2523872},
         {"name": "metacubexd-gh-pages.zip.sha256sum", "size": 90}
       ]
     }
