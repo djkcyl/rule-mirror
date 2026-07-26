@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-07-25T01:53:44Z",
+  "updated_at": "2026-07-26T01:58:01Z",
   "projects": [
     {
       "name": "MetaCubeX/meta-rules-dat",
       "description": "GeoIP / GeoSite Database",
       "license": "GPL-3.0",
       "path": "meta-rules-dat",
-      "total_size": 77150581,
+      "total_size": 77149395,
       "files": [
-        {"name": "BundleMRS.7z", "size": 9163815},
+        {"name": "BundleMRS.7z", "size": 9162629},
         {"name": "BundleMRS.7z.sha256sum", "size": 79},
         {"name": "GeoLite2-ASN.mmdb", "size": 12126831},
         {"name": "GeoLite2-ASN.mmdb.sha256sum", "size": 84},
@@ -43,7 +43,7 @@
       "description": "Rule Sets (RULE-SET)",
       "license": "GPL-3.0",
       "path": "clash-rules",
-      "total_size": 8008793,
+      "total_size": 8016395,
       "files": [
         {"name": "apple.txt", "size": 5387},
         {"name": "apple.txt.sha256sum", "size": 76},
@@ -67,7 +67,7 @@
         {"name": "private.txt.sha256sum", "size": 78},
         {"name": "proxy.txt", "size": 613441},
         {"name": "proxy.txt.sha256sum", "size": 76},
-        {"name": "reject.txt", "size": 4821231},
+        {"name": "reject.txt", "size": 4828833},
         {"name": "reject.txt.sha256sum", "size": 77},
         {"name": "telegramcidr.txt", "size": 274},
         {"name": "telegramcidr.txt.sha256sum", "size": 83},
@@ -80,11 +80,11 @@
       "description": "Android CN Apps & Games Direct Rule Sets",
       "license": "AGPL-3.0",
       "path": "direct-android-ruleset",
-      "total_size": 211142,
+      "total_size": 212386,
       "files": [
-        {"name": "APP.mutated.yaml", "size": 86979},
+        {"name": "APP.mutated.yaml", "size": 88226},
         {"name": "APP.mutated.yaml.sha256sum", "size": 83},
-        {"name": "GAME.mutated.yaml", "size": 123996},
+        {"name": "GAME.mutated.yaml", "size": 123993},
         {"name": "GAME.mutated.yaml.sha256sum", "size": 84}
       ]
     },
@@ -93,9 +93,9 @@
       "description": "Clash Meta Dashboard (Web UI)",
       "license": "MIT",
       "path": "metacubexd",
-      "total_size": 2545038,
+      "total_size": 2545241,
       "files": [
-        {"name": "metacubexd-gh-pages.zip", "size": 2544948},
+        {"name": "metacubexd-gh-pages.zip", "size": 2545151},
         {"name": "metacubexd-gh-pages.zip.sha256sum", "size": 90}
       ]
     }
