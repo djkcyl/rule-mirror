@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-07-26T01:58:01Z",
+  "updated_at": "2026-07-27T02:05:39Z",
   "projects": [
     {
       "name": "MetaCubeX/meta-rules-dat",
       "description": "GeoIP / GeoSite Database",
       "license": "GPL-3.0",
       "path": "meta-rules-dat",
-      "total_size": 77149395,
+      "total_size": 77149884,
       "files": [
-        {"name": "BundleMRS.7z", "size": 9162629},
+        {"name": "BundleMRS.7z", "size": 9163080},
         {"name": "BundleMRS.7z.sha256sum", "size": 79},
         {"name": "GeoLite2-ASN.mmdb", "size": 12126831},
         {"name": "GeoLite2-ASN.mmdb.sha256sum", "size": 84},
@@ -32,9 +32,9 @@
         {"name": "geosite-lite.dat.sha256sum", "size": 83},
         {"name": "geosite-lite.db", "size": 283407},
         {"name": "geosite-lite.db.sha256sum", "size": 82},
-        {"name": "geosite.dat", "size": 4233514},
+        {"name": "geosite.dat", "size": 4233529},
         {"name": "geosite.dat.sha256sum", "size": 78},
-        {"name": "geosite.db", "size": 6807641},
+        {"name": "geosite.db", "size": 6807664},
         {"name": "geosite.db.sha256sum", "size": 77}
       ]
     },
@@ -43,7 +43,7 @@
       "description": "Rule Sets (RULE-SET)",
       "license": "GPL-3.0",
       "path": "clash-rules",
-      "total_size": 8016395,
+      "total_size": 8023712,
       "files": [
         {"name": "apple.txt", "size": 5387},
         {"name": "apple.txt.sha256sum", "size": 76},
@@ -67,7 +67,7 @@
         {"name": "private.txt.sha256sum", "size": 78},
         {"name": "proxy.txt", "size": 613441},
         {"name": "proxy.txt.sha256sum", "size": 76},
-        {"name": "reject.txt", "size": 4828833},
+        {"name": "reject.txt", "size": 4836150},
         {"name": "reject.txt.sha256sum", "size": 77},
         {"name": "telegramcidr.txt", "size": 274},
         {"name": "telegramcidr.txt.sha256sum", "size": 83},
@@ -80,11 +80,11 @@
       "description": "Android CN Apps & Games Direct Rule Sets",
       "license": "AGPL-3.0",
       "path": "direct-android-ruleset",
-      "total_size": 212386,
+      "total_size": 211533,
       "files": [
-        {"name": "APP.mutated.yaml", "size": 88226},
+        {"name": "APP.mutated.yaml", "size": 87296},
         {"name": "APP.mutated.yaml.sha256sum", "size": 83},
-        {"name": "GAME.mutated.yaml", "size": 123993},
+        {"name": "GAME.mutated.yaml", "size": 124070},
         {"name": "GAME.mutated.yaml.sha256sum", "size": 84}
       ]
     },
