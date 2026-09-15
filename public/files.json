@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-09-14T02:35:10Z",
+  "updated_at": "2026-09-15T02:38:55Z",
   "projects": [
     {
       "name": "MetaCubeX/meta-rules-dat",
       "description": "GeoIP / GeoSite Database",
       "license": "GPL-3.0",
       "path": "meta-rules-dat",
-      "total_size": 76058036,
+      "total_size": 76056453,
       "files": [
-        {"name": "BundleMRS.7z", "size": 9225556},
+        {"name": "BundleMRS.7z", "size": 9223022},
         {"name": "BundleMRS.7z.sha256sum", "size": 79},
         {"name": "GeoLite2-ASN.mmdb", "size": 12106670},
         {"name": "GeoLite2-ASN.mmdb.sha256sum", "size": 84},
@@ -32,9 +32,9 @@
         {"name": "geosite-lite.dat.sha256sum", "size": 83},
         {"name": "geosite-lite.db", "size": 283407},
         {"name": "geosite-lite.db.sha256sum", "size": 82},
-        {"name": "geosite.dat", "size": 4244128},
+        {"name": "geosite.dat", "size": 4244510},
         {"name": "geosite.dat.sha256sum", "size": 78},
-        {"name": "geosite.db", "size": 6828352},
+        {"name": "geosite.db", "size": 6828921},
         {"name": "geosite.db.sha256sum", "size": 77}
       ]
     },
@@ -80,11 +80,11 @@
       "description": "Android CN Apps & Games Direct Rule Sets",
       "license": "AGPL-3.0",
       "path": "direct-android-ruleset",
-      "total_size": 214429,
+      "total_size": 214412,
       "files": [
         {"name": "APP.mutated.yaml", "size": 91251},
         {"name": "APP.mutated.yaml.sha256sum", "size": 83},
-        {"name": "GAME.mutated.yaml", "size": 123011},
+        {"name": "GAME.mutated.yaml", "size": 122994},
         {"name": "GAME.mutated.yaml.sha256sum", "size": 84}
       ]
     },
