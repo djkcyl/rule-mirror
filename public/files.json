@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-09-18T02:25:00Z",
+  "updated_at": "2026-09-19T02:25:22Z",
   "projects": [
     {
       "name": "MetaCubeX/meta-rules-dat",
       "description": "GeoIP / GeoSite Database",
       "license": "GPL-3.0",
       "path": "meta-rules-dat",
-      "total_size": 75771779,
+      "total_size": 75749977,
       "files": [
-        {"name": "BundleMRS.7z", "size": 9223864},
+        {"name": "BundleMRS.7z", "size": 9202062},
         {"name": "BundleMRS.7z.sha256sum", "size": 79},
         {"name": "GeoLite2-ASN.mmdb", "size": 12103050},
         {"name": "GeoLite2-ASN.mmdb.sha256sum", "size": 84},
@@ -43,7 +43,7 @@
       "description": "Rule Sets (RULE-SET)",
       "license": "GPL-3.0",
       "path": "clash-rules",
-      "total_size": 8705087,
+      "total_size": 8714664,
       "files": [
         {"name": "apple.txt", "size": 5424},
         {"name": "apple.txt.sha256sum", "size": 76},
@@ -67,7 +67,7 @@
         {"name": "private.txt.sha256sum", "size": 78},
         {"name": "proxy.txt", "size": 617718},
         {"name": "proxy.txt.sha256sum", "size": 76},
-        {"name": "reject.txt", "size": 5450027},
+        {"name": "reject.txt", "size": 5459604},
         {"name": "reject.txt.sha256sum", "size": 77},
         {"name": "telegramcidr.txt", "size": 274},
         {"name": "telegramcidr.txt.sha256sum", "size": 83},
@@ -80,11 +80,11 @@
       "description": "Android CN Apps & Games Direct Rule Sets",
       "license": "AGPL-3.0",
       "path": "direct-android-ruleset",
-      "total_size": 214047,
+      "total_size": 214170,
       "files": [
-        {"name": "APP.mutated.yaml", "size": 91204},
+        {"name": "APP.mutated.yaml", "size": 91210},
         {"name": "APP.mutated.yaml.sha256sum", "size": 83},
-        {"name": "GAME.mutated.yaml", "size": 122676},
+        {"name": "GAME.mutated.yaml", "size": 122793},
         {"name": "GAME.mutated.yaml.sha256sum", "size": 84}
       ]
     },
