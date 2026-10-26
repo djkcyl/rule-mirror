@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-10-25T02:28:25Z",
+  "updated_at": "2026-10-26T02:28:02Z",
   "projects": [
     {
       "name": "MetaCubeX/meta-rules-dat",
       "description": "GeoIP / GeoSite Database",
       "license": "GPL-3.0",
       "path": "meta-rules-dat",
-      "total_size": 72300770,
+      "total_size": 72257135,
       "files": [
-        {"name": "BundleMRS.7z", "size": 9302299},
+        {"name": "BundleMRS.7z", "size": 9271306},
         {"name": "BundleMRS.7z.sha256sum", "size": 79},
         {"name": "GeoLite2-ASN.mmdb", "size": 8981086},
         {"name": "GeoLite2-ASN.mmdb.sha256sum", "size": 84},
@@ -28,13 +28,13 @@
         {"name": "geoip.db.sha256sum", "size": 75},
         {"name": "geoip.metadb", "size": 8426776},
         {"name": "geoip.metadb.sha256sum", "size": 79},
-        {"name": "geosite-lite.dat", "size": 176462},
+        {"name": "geosite-lite.dat", "size": 176649},
         {"name": "geosite-lite.dat.sha256sum", "size": 83},
-        {"name": "geosite-lite.db", "size": 283731},
+        {"name": "geosite-lite.db", "size": 284035},
         {"name": "geosite-lite.db.sha256sum", "size": 82},
-        {"name": "geosite.dat", "size": 4312165},
+        {"name": "geosite.dat", "size": 4307247},
         {"name": "geosite.dat.sha256sum", "size": 78},
-        {"name": "geosite.db", "size": 6946764},
+        {"name": "geosite.db", "size": 6938549},
         {"name": "geosite.db.sha256sum", "size": 77}
       ]
     },
@@ -80,11 +80,11 @@
       "description": "Android CN Apps & Games Direct Rule Sets",
       "license": "AGPL-3.0",
       "path": "direct-android-ruleset",
-      "total_size": 213786,
+      "total_size": 213883,
       "files": [
-        {"name": "APP.mutated.yaml", "size": 90885},
+        {"name": "APP.mutated.yaml", "size": 90938},
         {"name": "APP.mutated.yaml.sha256sum", "size": 83},
-        {"name": "GAME.mutated.yaml", "size": 122734},
+        {"name": "GAME.mutated.yaml", "size": 122778},
         {"name": "GAME.mutated.yaml.sha256sum", "size": 84}
       ]
     },
