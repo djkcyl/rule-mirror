@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-04T04:04:36Z",
+  "updated_at": "2026-11-05T04:26:23Z",
   "projects": [
     {
       "name": "MetaCubeX/meta-rules-dat",
       "description": "GeoIP / GeoSite Database",
       "license": "GPL-3.0",
       "path": "meta-rules-dat",
-      "total_size": 72409244,
+      "total_size": 72307095,
       "files": [
-        {"name": "BundleMRS.7z", "size": 9303847},
+        {"name": "BundleMRS.7z", "size": 9337917},
         {"name": "BundleMRS.7z.sha256sum", "size": 79},
         {"name": "GeoLite2-ASN.mmdb", "size": 9000080},
         {"name": "GeoLite2-ASN.mmdb.sha256sum", "size": 84},
         {"name": "country-lite.mmdb", "size": 402703},
         {"name": "country-lite.mmdb.sha256sum", "size": 84},
-        {"name": "country.mmdb", "size": 7650367},
+        {"name": "country.mmdb", "size": 7621999},
         {"name": "country.mmdb.sha256sum", "size": 79},
         {"name": "geoip-lite.dat", "size": 210583},
         {"name": "geoip-lite.dat.sha256sum", "size": 81},
@@ -22,19 +22,19 @@
         {"name": "geoip-lite.db.sha256sum", "size": 80},
         {"name": "geoip-lite.metadb", "size": 403503},
         {"name": "geoip-lite.metadb.sha256sum", "size": 84},
-        {"name": "geoip.dat", "size": 16546071},
+        {"name": "geoip.dat", "size": 16475153},
         {"name": "geoip.dat.sha256sum", "size": 76},
-        {"name": "geoip.db", "size": 8233133},
+        {"name": "geoip.db", "size": 8213291},
         {"name": "geoip.db.sha256sum", "size": 75},
-        {"name": "geoip.metadb", "size": 8424898},
+        {"name": "geoip.metadb", "size": 8406197},
         {"name": "geoip.metadb.sha256sum", "size": 79},
         {"name": "geosite-lite.dat", "size": 176649},
         {"name": "geosite-lite.dat.sha256sum", "size": 83},
         {"name": "geosite-lite.db", "size": 284035},
         {"name": "geosite-lite.db.sha256sum", "size": 82},
-        {"name": "geosite.dat", "size": 4355984},
+        {"name": "geosite.dat", "size": 4356581},
         {"name": "geosite.dat.sha256sum", "size": 78},
-        {"name": "geosite.db", "size": 7015167},
+        {"name": "geosite.db", "size": 7016180},
         {"name": "geosite.db.sha256sum", "size": 77}
       ]
     },
@@ -43,7 +43,7 @@
       "description": "Rule Sets (RULE-SET)",
       "license": "GPL-3.0",
       "path": "clash-rules",
-      "total_size": 8948971,
+      "total_size": 8956033,
       "files": [
         {"name": "apple.txt", "size": 5424},
         {"name": "apple.txt.sha256sum", "size": 76},
@@ -65,9 +65,9 @@
         {"name": "lancidr.txt.sha256sum", "size": 78},
         {"name": "private.txt", "size": 3543},
         {"name": "private.txt.sha256sum", "size": 78},
-        {"name": "proxy.txt", "size": 622917},
+        {"name": "proxy.txt", "size": 623052},
         {"name": "proxy.txt.sha256sum", "size": 76},
-        {"name": "reject.txt", "size": 5711492},
+        {"name": "reject.txt", "size": 5718419},
         {"name": "reject.txt.sha256sum", "size": 77},
         {"name": "telegramcidr.txt", "size": 274},
         {"name": "telegramcidr.txt.sha256sum", "size": 83},
@@ -80,11 +80,11 @@
       "description": "Android CN Apps & Games Direct Rule Sets",
       "license": "AGPL-3.0",
       "path": "direct-android-ruleset",
-      "total_size": 424214,
+      "total_size": 421804,
       "files": [
-        {"name": "APP.mutated.yaml", "size": 171072},
+        {"name": "APP.mutated.yaml", "size": 169594},
         {"name": "APP.mutated.yaml.sha256sum", "size": 83},
-        {"name": "GAME.mutated.yaml", "size": 252975},
+        {"name": "GAME.mutated.yaml", "size": 252043},
         {"name": "GAME.mutated.yaml.sha256sum", "size": 84}
       ]
     },
@@ -93,9 +93,9 @@
       "description": "Clash Meta Dashboard (Web UI)",
       "license": "MIT",
       "path": "metacubexd",
-      "total_size": 2580903,
+      "total_size": 2580891,
       "files": [
-        {"name": "metacubexd-gh-pages.zip", "size": 2580813},
+        {"name": "metacubexd-gh-pages.zip", "size": 2580801},
         {"name": "metacubexd-gh-pages.zip.sha256sum", "size": 90}
       ]
     }
