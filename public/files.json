@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-11-17T05:51:06Z",
+  "updated_at": "2026-11-18T05:17:19Z",
   "projects": [
     {
       "name": "MetaCubeX/meta-rules-dat",
       "description": "GeoIP / GeoSite Database",
       "license": "GPL-3.0",
       "path": "meta-rules-dat",
-      "total_size": 72443969,
+      "total_size": 72454413,
       "files": [
-        {"name": "BundleMRS.7z", "size": 9383846},
+        {"name": "BundleMRS.7z", "size": 9394227},
         {"name": "BundleMRS.7z.sha256sum", "size": 79},
         {"name": "GeoLite2-ASN.mmdb", "size": 9065111},
         {"name": "GeoLite2-ASN.mmdb.sha256sum", "size": 84},
@@ -32,9 +32,9 @@
         {"name": "geosite-lite.dat.sha256sum", "size": 83},
         {"name": "geosite-lite.db", "size": 284035},
         {"name": "geosite-lite.db.sha256sum", "size": 82},
-        {"name": "geosite.dat", "size": 4358194},
+        {"name": "geosite.dat", "size": 4358215},
         {"name": "geosite.dat.sha256sum", "size": 78},
-        {"name": "geosite.db", "size": 7019571},
+        {"name": "geosite.db", "size": 7019613},
         {"name": "geosite.db.sha256sum", "size": 77}
       ]
     },
@@ -43,7 +43,7 @@
       "description": "Rule Sets (RULE-SET)",
       "license": "GPL-3.0",
       "path": "clash-rules",
-      "total_size": 9019727,
+      "total_size": 9030772,
       "files": [
         {"name": "apple.txt", "size": 5424},
         {"name": "apple.txt.sha256sum", "size": 76},
@@ -67,7 +67,7 @@
         {"name": "private.txt.sha256sum", "size": 78},
         {"name": "proxy.txt", "size": 623531},
         {"name": "proxy.txt.sha256sum", "size": 76},
-        {"name": "reject.txt", "size": 5781153},
+        {"name": "reject.txt", "size": 5792198},
         {"name": "reject.txt.sha256sum", "size": 77},
         {"name": "telegramcidr.txt", "size": 274},
         {"name": "telegramcidr.txt.sha256sum", "size": 83},
@@ -80,11 +80,11 @@
       "description": "Android CN Apps & Games Direct Rule Sets",
       "license": "AGPL-3.0",
       "path": "direct-android-ruleset",
-      "total_size": 427270,
+      "total_size": 427877,
       "files": [
-        {"name": "APP.mutated.yaml", "size": 171866},
+        {"name": "APP.mutated.yaml", "size": 171455},
         {"name": "APP.mutated.yaml.sha256sum", "size": 83},
-        {"name": "GAME.mutated.yaml", "size": 255237},
+        {"name": "GAME.mutated.yaml", "size": 256255},
         {"name": "GAME.mutated.yaml.sha256sum", "size": 84}
       ]
     },
@@ -93,9 +93,9 @@
       "description": "Clash Meta Dashboard (Web UI)",
       "license": "MIT",
       "path": "metacubexd",
-      "total_size": 2581161,
+      "total_size": 2576833,
       "files": [
-        {"name": "metacubexd-gh-pages.zip", "size": 2581071},
+        {"name": "metacubexd-gh-pages.zip", "size": 2576743},
         {"name": "metacubexd-gh-pages.zip.sha256sum", "size": 90}
       ]
     }
